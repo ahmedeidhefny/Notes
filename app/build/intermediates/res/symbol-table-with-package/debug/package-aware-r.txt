@@ -1200,6 +1200,7 @@ id line3
 id listMode
 id list_item
 id masked
+id menu_delete_all_notes
 id menu_save_note
 id message
 id middle
@@ -1402,6 +1403,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu add_edit_activity_menu
+menu main_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

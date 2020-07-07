@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -85,6 +87,28 @@ public class MainActivity extends AppCompatActivity {
         }).attachToRecyclerView(nodesRecycler);
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_delete_all_notes:
+                deleteAllNotes();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void deleteAllNotes() {
+        noteViewModel.deleteAll();
+        Toast.makeText(this, "All Notes Deleted", Toast.LENGTH_SHORT).show();
     }
 
     @Override
